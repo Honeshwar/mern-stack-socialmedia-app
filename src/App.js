@@ -3,6 +3,7 @@ import {
   Navigate,
   Outlet,
   RouterProvider,
+  // useNavigate,
 } from "react-router-dom";
 import { LeftBar, Navbar, RightBar } from "./components";
 import { Home, Profile, SignIn, SignUp } from "./pages";
@@ -10,8 +11,15 @@ import { Home, Profile, SignIn, SignUp } from "./pages";
 function App() {
   const currentUser = true;
   const ProtectedRoute = ({ children }) => {
+    // const navigate = useNavigate();
     if (!currentUser) {
-      return <Navigate to="/signin"/>;
+      return <Navigate to="/signin" />;
+    }
+    return children;
+  };
+  const ProtectedRoute2 = ({ children }) => {
+    if (currentUser) {
+      return <Navigate to="/" />;
     }
     return children;
   };
@@ -43,8 +51,8 @@ function App() {
       ],
     },
 
-    { path: "/signin", element: <SignIn /> },
-    { path: "/signup", element: <SignUp /> },
+    { path: "/signin", element: <ProtectedRoute2><SignIn /></ProtectedRoute2> },
+    { path: "/signup", element: <ProtectedRoute2><SignUp /></ProtectedRoute2> },
   ]);
   return <RouterProvider router={router}></RouterProvider>;
 }
