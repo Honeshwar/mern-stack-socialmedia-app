@@ -25,9 +25,9 @@ function App() {
   };
   function Layout() {
     return (
-      <div>
+      <div className="layout">
         <Navbar />
-        <div>
+        <div className="left-center-right">
           <LeftBar />
           <div>
             <Outlet />
