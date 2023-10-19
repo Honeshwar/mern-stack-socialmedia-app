@@ -21,6 +21,7 @@ code {
   display: flex;
   gap: 20px;
   justify-content: space-between;
+  background-color:lightgray;
 }
 // use to ccrreate common re-use scss code anywhere in website
 @mixin mobile {

@@ -1,4 +1,35 @@
 .leftBar {
-  flex: 1;
-  border: solid;
+  // flex: 1;
+  padding: 10px 10px;
+  width: 250px;
+  height: calc(100vh - 50px);
+  // border: solid;
+  background-color: white;
+  section {
+    h6 {
+      margin-bottom: 10px;
+      margin-left: 5px;
+      font-family: system-ui;
+      font-weight: 600;
+    }
+    .items {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 10px;
+      img {
+        width: 40px;
+        height: 20px;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+      span {
+        font-size: 14px;
+        font-family: system-ui;
+      }
+    }
+  }
+  hr {
+    margin-block: 20px 15px;
+  }
 }
