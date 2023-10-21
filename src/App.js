@@ -29,9 +29,9 @@ function App() {
         <Navbar />
         <div className="left-center-right">
           <LeftBar />
-          <div>
-            <Outlet />
-          </div>
+          {/* <div> */}
+          <Outlet />
+          {/* </div> */}
           <RightBar />
         </div>
       </div>
@@ -51,8 +51,22 @@ function App() {
       ],
     },
 
-    { path: "/signin", element: <ProtectedRoute2><SignIn /></ProtectedRoute2> },
-    { path: "/signup", element: <ProtectedRoute2><SignUp /></ProtectedRoute2> },
+    {
+      path: "/signin",
+      element: (
+        <ProtectedRoute2>
+          <SignIn />
+        </ProtectedRoute2>
+      ),
+    },
+    {
+      path: "/signup",
+      element: (
+        <ProtectedRoute2>
+          <SignUp />
+        </ProtectedRoute2>
+      ),
+    },
   ]);
   return <RouterProvider router={router}></RouterProvider>;
 }

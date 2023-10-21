@@ -3,6 +3,7 @@ import { GiThreeFriends } from "react-icons/gi";
 export default function LeftBar() {
   return (
     <aside className="leftBar">
+      
       <section>
         <div className="items">
           <img
@@ -112,6 +113,7 @@ export default function LeftBar() {
           <span>Courses</span>
         </div>
       </section>
+   
     </aside>
   );
 }

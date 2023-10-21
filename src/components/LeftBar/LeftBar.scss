@@ -1,8 +1,8 @@
 .leftBar {
-  // flex: 1;
+  flex: 1;
   padding: 15px 20px;
-  width: 250px;
-  height: calc(100vh - 50px); //good
+  // // width: 250px;
+  // height: calc(100vh - 50px); //good
   // border: solid;
   background-color: white;
   section {
@@ -15,7 +15,7 @@
     .items {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
       margin-bottom: 10px;
       img {
         width: 25px;
@@ -32,6 +32,6 @@
     }
   }
   hr {
-    margin-block: 20px 15px;
+    margin-block: 10px 5px;
   }
 }

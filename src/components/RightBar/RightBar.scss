@@ -1,6 +1,8 @@
 .rightBar {
-  width: 400px;
-  height: calc(100vh - 50px);
+  flex: 1.5;
+  // border:solid;
+  // width: 300px;
+  // height: calc(100vh - 50px);
   padding: 20px 20px;
   // border: solid;
   display: flex;
@@ -12,6 +14,9 @@
     box-shadow: 0 0 5px 1px gray;
 
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     h6 {
       margin-bottom: 10px;
       font-family: system-ui;
