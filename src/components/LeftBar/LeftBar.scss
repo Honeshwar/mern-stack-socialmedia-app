@@ -1,9 +1,18 @@
+@import "../../index.scss"; //to import static scss rules/styles
+
 .leftBar {
-  flex: 1;
+  flex: 2;
   padding: 15px 20px;
-  // // width: 250px;
-  // height: calc(100vh - 50px); //good
-  // border: solid;
+  height: calc(100vh - 50px); //good
+  position: sticky;
+  top: 50px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include mobile {
+    display: none;
+  }
   background-color: white;
   section {
     h6 {
@@ -32,6 +41,6 @@
     }
   }
   hr {
-    margin-block: 10px 5px;
+    margin-block: 15px 10px;
   }
 }

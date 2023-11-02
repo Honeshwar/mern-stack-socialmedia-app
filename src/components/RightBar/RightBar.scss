@@ -1,13 +1,19 @@
 .rightBar {
-  flex: 1.5;
+  flex: 3;
   // border:solid;
   // width: 300px;
-  // height: calc(100vh - 50px);
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
   padding: 20px 20px;
   // border: solid;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   .items {
     background-color: white;
     padding: 10px 20px 20px 10px;
@@ -101,5 +107,8 @@
         }
       }
     }
+  }
+  @media screen and (max-width: 960px) {
+    display: none;
   }
 }

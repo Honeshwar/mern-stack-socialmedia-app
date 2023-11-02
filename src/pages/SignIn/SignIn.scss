@@ -13,6 +13,7 @@
     display: flex;
     width: 70%;
     height: 70%;
+    // flex:1;
     // min-height: 450px;
     border-radius: 10px;
     // padding: 10px;
@@ -35,11 +36,11 @@
       // align-items:center;
       border-radius: 10px 0 0 10px;
       h1 {
-        font-size: 3rem;
+        font-size: 5rem;
         color: white;
       }
       p {
-        font-size: 13px;
+        font-size: 14px;
         color: lightgrey;
       }
       a {

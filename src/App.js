@@ -29,9 +29,9 @@ function App() {
         <Navbar />
         <div className="left-center-right">
           <LeftBar />
-          {/* <div> */}
-          <Outlet />
-          {/* </div> */}
+          <div style={{ flex: 6 }}>
+            <Outlet />
+          </div>
           <RightBar />
         </div>
       </div>
