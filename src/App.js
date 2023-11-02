@@ -6,7 +6,10 @@ import {
   // useNavigate,
 } from "react-router-dom";
 import { LeftBar, Navbar, RightBar } from "./components";
-import { ContextProvider, useContextValue } from "./context/context";
+import {
+  DarkModeContextProvider,
+  useContextValue,
+} from "./context/darkModeContext";
 import { Home, Profile, SignIn, SignUp } from "./pages";
 
 function App() {
@@ -44,9 +47,9 @@ function App() {
       path: "/",
       element: (
         <ProtectedRoute>
-          <ContextProvider>
+          <DarkModeContextProvider>
             <Layout />
-          </ContextProvider>
+          </DarkModeContextProvider>
         </ProtectedRoute>
       ),
       children: [

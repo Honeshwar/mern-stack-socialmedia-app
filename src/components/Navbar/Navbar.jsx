@@ -3,7 +3,7 @@ import { AiOutlineHome, AiOutlineMail, AiOutlineUser } from "react-icons/ai";
 import { BsMoon, BsSun, BsSearch } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { useContextValue } from "../../context/context";
+import { useContextValue } from "../../context/darkModeContext";
 
 export default function Navbar() {
   const { isDarkMode, toogleIsDarkMode } = useContextValue(); //contextValue

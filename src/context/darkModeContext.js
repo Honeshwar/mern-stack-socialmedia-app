@@ -5,7 +5,7 @@ const context = createContext();
 
 // provide context, custom comp created
 
-export const ContextProvider = ({ children }) => {
+export const DarkModeContextProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") || false,
   );
