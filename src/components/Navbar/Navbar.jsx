@@ -22,7 +22,7 @@ export default function Navbar() {
         <BiCategory />
         <div className="searchBox">
           <div className="searchIcon">
-            <BsSearch />
+            <BsSearch className="searchIcon" />
           </div>
           <input type="search" placeholder="Search" />
         </div>

@@ -2,8 +2,27 @@ import "./Post.scss";
 import { TfiCommentAlt } from "react-icons/tfi";
 import { BsThreeDots, BsFillShareFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useState } from "react";
+import Comments from "../Comments/Comments.jsx";
 
 export default function Post({ post }) {
+  const [showComments, setShowComments] = useState(false);
+  const comments = [
+    {
+      id: 1,
+      name: "John Deo",
+      desc: "lorem22",
+      time: "1hour ago",
+      profilePic: "url",
+    },
+    {
+      id: 2,
+      name: "Sam Mendes",
+      desc: "lorem22",
+      time: "2shour ago",
+      profilePic: "url",
+    },
+  ];
   return (
     <div className="post">
       <div className="top">
@@ -34,7 +53,10 @@ export default function Post({ post }) {
           <AiOutlineHeart />
           {/* <AiFillHeart/>*/} 2 Like
         </div>
-        <div className="interaction-btn">
+        <div
+          className="interaction-btn"
+          onClick={() => setShowComments((ps) => !ps)}
+        >
           <TfiCommentAlt />
           Comments
         </div>
@@ -43,6 +65,7 @@ export default function Post({ post }) {
           Share
         </div>
       </div>
+      {showComments && <Comments comments={comments} />}
     </div>
   );
 }

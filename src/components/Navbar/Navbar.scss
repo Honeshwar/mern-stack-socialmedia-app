@@ -4,7 +4,7 @@
   width: 100%;
   height: 60px;
   //   border: solid;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 20px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -38,11 +38,14 @@
       padding: 5px 10px;
       border-radius: 10px;
       border: 1px solid lightgray;
+      cursor: initial;
       &:hover {
-        border: 2px solid rgb(145, 145, 247);
+        border:
+          1.5px solid rgb(145, 145, 247);
       }
       input {
         width: 250px;
+        cursor: initial;
         // padding: 5px;
         // font-family: system-ui;
         // padding-left: 30px;
@@ -60,6 +63,7 @@
       }
       .searchIcon {
         // position: absolute;
+        cursor: initial;
         left: 7px;
         @include mobile {
           // border: solid;
@@ -68,12 +72,12 @@
     }
   }
   .right {
-    width: 300px;
+    width: 270px;
     display: flex;
     align-items: center;
     // border: solid;
     // justify-content: space-between;
-     & :hover {
+    & :hover {
       cursor: pointer;
     }
     @include mobile {

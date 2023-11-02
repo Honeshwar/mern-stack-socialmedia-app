@@ -3,7 +3,7 @@ import "./Posts.scss";
 
 export default function Posts() {
   const posts = [
-    {
+    {//id,name , profile pic,desc,postimg
       url: "https://cdn.pixabay.com/photo/2016/06/06/17/05/woman-1439909_640.jpg",
       name: "John Deo",
     },
