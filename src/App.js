@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   createBrowserRouter,
   Navigate,
@@ -6,6 +7,7 @@ import {
   // useNavigate,
 } from "react-router-dom";
 import { LeftBar, Navbar, RightBar } from "./components";
+import { ContextProvider, useContextValue } from "./context/context";
 import { Home, Profile, SignIn, SignUp } from "./pages";
 
 function App() {
@@ -24,8 +26,9 @@ function App() {
     return children;
   };
   function Layout() {
+    const { isDarkMode } = useContextValue(); //contextValue
     return (
-      <div className="layout">
+      <div className={isDarkMode ? "darkMode" : "lightMode"}>
         <Navbar />
         <div className="left-center-right">
           <LeftBar />
@@ -42,7 +45,9 @@ function App() {
       path: "/",
       element: (
         <ProtectedRoute>
-          <Layout />
+          <ContextProvider>
+            <Layout />
+          </ContextProvider>
         </ProtectedRoute>
       ),
       children: [

@@ -2,9 +2,9 @@
   flex: 3;
   // border:solid;
   // width: 300px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   position: sticky;
-  top: 50px;
+  top: 60px;
   padding: 20px 20px;
   // border: solid;
   display: flex;
@@ -27,7 +27,7 @@
       margin-bottom: 10px;
       font-family: system-ui;
       font-weight: 600;
-      color: gray;
+      // color: gray;
     }
     .contents {
       display: flex;
@@ -62,17 +62,17 @@
           span {
             font-size: 12px;
             font-family: system-ui;
-            color: gray;
+            // color: gray;
             font-weight: 500;
           }
           h6 {
             font-weight: 700;
-            color: rgb(43, 42, 42);
+            // color: rgb(43, 42, 42);
             font-size: 12px;
             span {
               font-size: 11px;
               font-family: system-ui;
-              color: gray;
+              // color: gray;
               font-weight: 500;
             }
           }
@@ -83,7 +83,7 @@
           span {
             font-size: 12px;
             font-family: system-ui;
-            color: gray;
+            // color: gray;
           }
 
           button {

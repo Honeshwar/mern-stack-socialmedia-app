@@ -3,9 +3,9 @@
 .leftBar {
   flex: 2;
   padding: 15px 20px;
-  height: calc(100vh - 50px); //good
+  height: calc(100vh - 60px); //good
   position: sticky;
-  top: 50px;
+  top: 60px;
   overflow-y: auto;
   &::-webkit-scrollbar {
     display: none;

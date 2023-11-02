@@ -29,7 +29,7 @@ export default function Stories() {
   ];
 
   return (
-    <div className="story">
+    <div className="stories">
       {stories.map((story, index) => (
         <div className="card" key={index}>
           <img src={story.url} alt={story.name} />
