@@ -4,6 +4,7 @@
   flex: 2;
   padding: 15px 20px;
   height: calc(100vh - 60px); //good
+  max-width: 300px;
   position: sticky;
   top: 60px;
   overflow-y: auto;

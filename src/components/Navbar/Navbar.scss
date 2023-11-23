@@ -16,13 +16,11 @@
   background-color: white;
   .left {
     display: flex;
-    // justify-content: space-between;
-    gap: 35px;
     align-items: center;
-    width: fit-content;
-    // border: solid;
+    gap:45px;
     @include mobile {
       justify-content: space-between;
+      width:100%;
     }
     & :hover {
       cursor: pointer;
@@ -30,43 +28,55 @@
     h1 {
       color: rgb(83, 83, 235);
     }
-    .searchBox {
-      // position: relative;
+    .icons{
       display: flex;
+      // justify-content: space-between;
+      gap: 35px;
       align-items: center;
-      gap: 10px;
-      padding: 5px 10px;
-      border-radius: 10px;
-      border: 1px solid lightgray;
-      cursor: initial;
-      &:hover {
-        border:
-          1.5px solid rgb(145, 145, 247);
-      }
-      input {
-        width: 250px;
+      width: fit-content;
+      .searchBox {
+        // position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
         cursor: initial;
-        // padding: 5px;
-        // font-family: system-ui;
-        // padding-left: 30px;
-        // border-radius: 5px;
-        border: none;
-        background-color: transparent;
-        // border: 1.3px solid gray;
-        &:focus {
-          // outline: 1.5px solid rgb(83, 83, 235);
-          outline: none;
+        &:hover {
+          border:
+            1.5px solid rgb(145, 145, 247);
         }
-        @include mobile {
-          width: 100px;
+        input {
+          width: 250px;
+          cursor: initial;
+          // padding: 5px;
+          // font-family: system-ui;
+          // padding-left: 30px;
+          // border-radius: 5px;
+          border: none;
+          background-color: transparent;
+          // border: 1.3px solid gray;
+          &:focus {
+            // outline: 1.5px solid rgb(83, 83, 235);
+            outline: none;
+          }
+          @include mobile{
+              display: none;
+            }
+  
+            @include tablet{
+              width: 100px;
+            }
+            
         }
-      }
-      .searchIcon {
-        // position: absolute;
-        cursor: initial;
-        left: 7px;
-        @include mobile {
-          // border: solid;
+        .searchIcon {
+          // position: absolute;
+          cursor: initial;
+          left: 7px;
+          @include mobile {
+            // border: solid;
+          }
         }
       }
     }
@@ -83,7 +93,10 @@
     @include mobile {
       display: none;
     }
-    @include tablet {
+    // @include tablet {
+     
+    // }
+    @include desktop{
       :not(h1, img, span) {
         display: none;
       }

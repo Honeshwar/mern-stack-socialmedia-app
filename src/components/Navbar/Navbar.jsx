@@ -12,6 +12,7 @@ export default function Navbar() {
     <div className="navbar">
       <div className="left">
         <h1>Social</h1>
+        <div className="icons">
         <AiOutlineHome />
         {isDarkMode ? (
           <BsSun onClick={toogleIsDarkMode} />
@@ -26,7 +27,8 @@ export default function Navbar() {
           </div>
           <input type="search" placeholder="Search" />
         </div>
-      </div>
+       </div>
+       </div>
       <div className="right">
         <AiOutlineUser />
         <AiOutlineMail />

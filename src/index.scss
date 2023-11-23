@@ -83,6 +83,31 @@ code {
       }
     }
   }
+  // for profile
+  .profile {
+    .details { 
+      background-color: #2b2a2a;
+      color: white;
+      box-shadow: 0 0 5px 1px rgb(43, 42, 42);
+      img {
+        box-shadow: 0 0 5px 1px rgb(43, 42, 42);
+      }
+      .left, .center .links a{
+        color: white;
+      }
+    }
+    .userPosts{
+      .post {
+      background-color: #2b2a2a;
+      color: white;
+      box-shadow: 0 0 5px 1px rgb(43, 42, 42);
+      p,
+      .bottom .interaction-btn {
+        color: whitesmoke;
+      }
+    }
+    }
+  }
 }
 
 .left-center-right {
@@ -95,12 +120,17 @@ code {
 }
 // use to ccrreate common re-use scss code anywhere in website
 @mixin mobile {
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }
 @mixin tablet {
   @media screen and (max-width: 760px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (max-width: 960px) {
     @content;
   }
 }
