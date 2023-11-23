@@ -129,6 +129,7 @@ code {
     @content;
   }
 }
+// desktop
 @mixin desktop {
   @media screen and (max-width: 960px) {
     @content;
