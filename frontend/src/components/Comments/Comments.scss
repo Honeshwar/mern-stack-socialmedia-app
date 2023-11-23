@@ -40,9 +40,9 @@
         .comment{
             display:flex;
             gap:20px;
-            .left{
-                // flex:1;
-            }
+            // .left{
+            //     // flex:1;
+            // }
             .center{
                 width:70%;
                 h4{
@@ -57,7 +57,7 @@
                 // flex:1;
                 // border:solid;
                 display:flex;
-                justify-content:end;
+                justify-content:flex-end;
                 align-items:center;
                 span{
                     font-size:13px;
