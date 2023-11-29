@@ -1,0 +1,32 @@
+{
+  "name": "social_media_backend",
+  "version": "1.0.0",
+  "description": "Social media backend",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Honeshwar/mern-stack-socialmedia-app.git"
+  },
+  "keywords": [
+    "social"
+  ],
+  "author": "Honeshwar Thakur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Honeshwar/mern-stack-socialmedia-app/issues"
+  },
+  "homepage": "https://github.com/Honeshwar/mern-stack-socialmedia-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.0.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
+  }
+}
