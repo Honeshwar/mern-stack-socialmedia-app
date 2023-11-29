@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+.env
+/node_modules
+/.codesandbox
+/.devcontainer
+=======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -21,3 +27,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+>>>>>>> ad5b0bbf148bf3155c5845d6a67988f81c0b88ce
