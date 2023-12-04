@@ -11,7 +11,8 @@ const mongodb = require("./config/mongoose");
 const app = express();
 const port = process.env?.PORT;
 //add db
-app.use(express.json()); //to parse req, only application/json content-type work, else use urlencoded()
+app.use(express.urlencoded());
+// app.use(express.json()); //to parse req, only application/json content-type work, else use urlencoded()
 app.use(helmet());
 app.use(morgan("common"));
 

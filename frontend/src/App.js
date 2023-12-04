@@ -13,7 +13,7 @@ import {
 import { Home, Profile, SignIn, SignUp } from "./pages";
 
 function App() {
-  const currentUser = true;
+  const currentUser = false;
   const ProtectedRoute = ({ children }) => {
     // const navigate = useNavigate();
     if (!currentUser) {

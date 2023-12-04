@@ -2,14 +2,14 @@ const AUTH_API_URL = "https://6lftc9-8000.csb.app/api/auth/";
 const USERS_API_URL = "https://6lftc9-8000.csb.app/api/users/";
 const POSTS_API_URL = "https://6lftc9-8000.csb.app/api/posts/";
 
-export default const Generate_API_URL = {
+const GENERATE_API_URL = {
   //auth
   auth: {
-    register: () => AUTH_API_URL + "/register",
-    signin: () => AUTH_API_URL + "/signin",
+    register: () => AUTH_API_URL + "register",
+    signin: () => AUTH_API_URL + "signin",
   },
   //user
-  users: {un
+  users: {
     get: (userId) => USERS_API_URL + userId,
     delete: (userId) => USERS_API_URL + userId,
     update: (userId) => USERS_API_URL + userId,
@@ -26,3 +26,4 @@ export default const Generate_API_URL = {
     like: (postId) => POSTS_API_URL + postId + "/like",
   },
 };
+export default GENERATE_API_URL;
