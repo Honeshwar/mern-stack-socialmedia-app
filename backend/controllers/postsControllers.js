@@ -35,8 +35,8 @@ exports.getAll = async (req, res) => {
 
 exports.timeline = async (req, res) => {
     try {
-        const currUser = await User.findById(req.body.userId);
-        const userPost = await Post.find({userId: req.body.userId});
+        const currUser = await User.findById(req.params.userId);
+        const userPost = await Post.find({userId: req.params.userId});
         //user friends
         const friendPosts = await Promise.all(
             currUser.followings.length !== 0 && currUser.followings.map((friendId) => {

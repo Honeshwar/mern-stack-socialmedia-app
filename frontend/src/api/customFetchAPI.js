@@ -12,7 +12,7 @@ async function customFetch(url, configObj) {
       },
       body: JSON.stringify(configObj.body),
     };
-
+    console.log("configurations.body", configurations.body);
     //call api
     const data = await fetch(url, configurations);
     const dataJson = await data.json();

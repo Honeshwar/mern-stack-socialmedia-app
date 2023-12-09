@@ -19,10 +19,10 @@ exports.register = async (req, res) => {
 
     //2nd way
     //create user
-    const nU = await User.create({
-      ...user,
-      password: hashPassword,
-    });
+    // const nU = await User.create({
+    //   ...user,
+    //   password: hashPassword,
+    // });
 
     //respond
     res.status(200).json(nU);
