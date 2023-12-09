@@ -18,7 +18,7 @@ app.use(
     origin: "https://6lftc9-3000.csb.app",
   }),
 );
-// app.use(express.urlencoded());
+// app.use(express.urlencoded());//only work for url, x-www-form-urlencoded
 
 app.use(express.json()); //to parse req, only application/json content-type work, else use urlencoded()
 app.use(helmet());

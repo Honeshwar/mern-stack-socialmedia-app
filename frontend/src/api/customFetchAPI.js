@@ -8,7 +8,6 @@ async function customFetch(url, configObj) {
       method: configObj.method,
       headers: {
         "Content-Type": "application/json",
-        mode: "no-cors",
       },
       body: JSON.stringify(configObj.body),
     };
@@ -17,8 +16,8 @@ async function customFetch(url, configObj) {
     const data = await fetch(url, configurations);
     const dataJson = await data.json();
     console.log(dataJson);
-    if (dataJson.data.error) throw new Error(dataJson.data.error);
-    return { success: true, data: dataJson.data };
+    if (dataJson.error) throw new Error(dataJson.data.error);
+    return { success: true, data: dataJson };
   } catch (error) {
     console.log("custom fetch", error);
     return { success: false, error: error.message };
