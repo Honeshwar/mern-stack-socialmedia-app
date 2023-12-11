@@ -1,36 +1,18 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import request_API from "../../api/customFetchAPI";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useContextValue } from "../../context/authContext";
 import "./SignIn.scss";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loginUser, setLoginUser] = useState(null);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (loginUser) {
-      const findUser = async () => {
-        const data = await request_API.auth.signin(loginUser);
-        console.log("signin data: ", data);
-        if (!data.success) {
-          setError(data.error);
-          return;
-        }
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
-      };
-      findUser();
-    }
-  }, [loginUser, navigate]);
+  const { error, setSignIn } = useContextValue();
 
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(email, password);
     const user = { email, password };
-    setLoginUser(user);
+    setSignIn(user);
   };
   return (
     <div className="signIn">

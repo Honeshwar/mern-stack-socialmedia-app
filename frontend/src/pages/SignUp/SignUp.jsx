@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import request_API from "../../api/customFetchAPI";
+import { Link } from "react-router-dom";
+import { useContextValue } from "../../context/authContext";
+
 import "./SignUp.scss";
 
 export default function SignUp() {
@@ -8,32 +9,18 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const { error, setSignUp } = useContextValue();
 
-  const [newUser, setNewUser] = useState(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    //set loading
-    if (newUser) {
-      console.log(newUser);
-      const registerUser = async () => {
-        const userData = await request_API.auth.register(newUser);
-        console.log("new user created", userData);
-        if (userData.success) navigate("/signin");
-      };
-      registerUser();
-      //remove loading
-    }
-  }, [newUser]);
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(username, email, password, confirmPassword);
-    setNewUser({ username, email, password });
+    setSignUp({ username, email, password });
   };
   return (
     <div className="signUp">
       <div className="card">
         <div className="left">
+          {error && <p className="error">{error.message}</p>}
           <h1>SignUp</h1>
           <form onSubmit={submitHandler} className="loginForm">
             <div className="inputItems">

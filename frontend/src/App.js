@@ -6,6 +6,7 @@ import {
   // useNavigate,
 } from "react-router-dom";
 import { LeftBar, Navbar, RightBar } from "./components";
+import AuthProvider from "./context/authContext";
 import {
   DarkModeContextProvider,
   useContextValue,
@@ -62,7 +63,9 @@ function App() {
       path: "/signin",
       element: (
         <ProtectedRoute2>
-          <SignIn />
+          <AuthProvider>
+            <SignIn />
+          </AuthProvider>
         </ProtectedRoute2>
       ),
     },
@@ -70,7 +73,9 @@ function App() {
       path: "/signup",
       element: (
         <ProtectedRoute2>
-          <SignUp />
+          <AuthProvider>
+            <SignUp />
+          </AuthProvider>
         </ProtectedRoute2>
       ),
     },
