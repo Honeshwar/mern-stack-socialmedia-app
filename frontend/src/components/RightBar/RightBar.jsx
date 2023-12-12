@@ -1,6 +1,9 @@
 import "./RightBar.scss";
+import { useUserContextValue } from "../../context/userContext";
 
 export default function RightBar() {
+  const { user } = useUserContextValue();
+
   return (
     <aside className="rightBar">
       <section className="items">
@@ -44,7 +47,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                Nial Haran
+                {user.username}
                 <span> changed their cover picture</span>
               </h6>
             </div>
@@ -59,7 +62,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                Nial Haran <span> like a post</span>
+                {user.username} <span> like a post</span>
               </h6>
             </div>
             <div className="right">
@@ -73,7 +76,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                Nial Haran <span> do comment</span>
+                {user.username} <span> do comment</span>
               </h6>
             </div>
             <div className="right">
@@ -87,7 +90,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                Nial Haran <span> post</span>
+                {user.username} <span> post</span>
               </h6>
             </div>
             <div className="right">

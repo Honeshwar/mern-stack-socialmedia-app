@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useContextValue } from "../../context/authContext";
 import "./SignIn.scss";
+import { useAuthContextValue } from "../../context/authContext";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { error, setSignIn } = useContextValue();
-
+  const { error, setSignIn } = useAuthContextValue();
+  console.log("error signin", error);
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(email, password);
@@ -28,7 +28,7 @@ export default function SignIn() {
           <Link to="/signup">Register</Link>
         </div>
         <div className="right">
-          {error && <p className="error">{error.message}</p>}
+          {error && <p className="error">{error}</p>}
           <h1>SignIn</h1>
           <form
             action=""

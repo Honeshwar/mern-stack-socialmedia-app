@@ -1,10 +1,12 @@
 import "./Stories.scss";
+import { useUserContextValue } from "../../context/userContext";
 
 export default function Stories() {
+  const { user } = useUserContextValue();
   const stories = [
     {
       url: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      name: "John Deo",
+      name: user?.username,
     },
     {
       url: "https://cdn.pixabay.com/photo/2016/06/06/17/05/woman-1439909_640.jpg",

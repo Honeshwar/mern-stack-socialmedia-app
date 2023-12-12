@@ -1,18 +1,22 @@
 import "./LeftBar.scss";
+import { Link } from "react-router-dom";
 import { GiThreeFriends } from "react-icons/gi";
+import { useUserContextValue } from "../../context/userContext";
+
 export default function LeftBar() {
+  const { user } = useUserContextValue();
+
   return (
     <aside className="leftBar">
-      
       <section>
-        <div className="items">
+        <Link to={`/profile/${user?._id}`} className="items">
           <img
             className="profile"
             src=" https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
             alt="Profile"
           />
-          <span>John Deo</span>
-        </div>
+          <span>{user?.username}</span>
+        </Link>
         <div className="items">
           <img
             src="https://cdn-icons-png.flaticon.com/128/5189/5189290.png"
@@ -113,7 +117,6 @@ export default function LeftBar() {
           <span>Courses</span>
         </div>
       </section>
-   
     </aside>
   );
 }

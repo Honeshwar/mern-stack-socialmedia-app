@@ -9,49 +9,43 @@ import { LeftBar, Navbar, RightBar } from "./components";
 import AuthProvider from "./context/authContext";
 import {
   DarkModeContextProvider,
-  useContextValue,
+  useDarkModeContextValue,
 } from "./context/darkModeContext";
 import { Home, Profile, SignIn, SignUp } from "./pages";
+import ProtectedRoute from "./ProtectedRoute";
+import UserContextProvider from "./context/userContext";
 
 function App() {
-  const currentUser = false;
-  const ProtectedRoute = ({ children }) => {
-    // const navigate = useNavigate();
-    if (!currentUser) {
-      return <Navigate to="/signin" />;
-    }
-    return children;
-  };
-  const ProtectedRoute2 = ({ children }) => {
-    if (currentUser) {
-      return <Navigate to="/" />;
-    }
-    return children;
-  };
   function Layout() {
-    const { isDarkMode } = useContextValue(); //contextValue
+    const { isDarkMode } = useDarkModeContextValue(); //contextValue
+    console.log("isDarkMode", isDarkMode);
     return (
-      <div className={isDarkMode ? "darkMode" : "lightMode"}>
-        <Navbar />
-        <div className="left-center-right">
-          <LeftBar />
-          <div style={{ flex: 6 }}>
-            <Outlet />
-          </div>
-          <RightBar />
-        </div>
-      </div>
+      <UserContextProvider>
+        <AuthProvider>
+          <ProtectedRoute>
+            <div className={isDarkMode ? "darkMode" : "lightMode"}>
+              <Navbar />
+              <div className="left-center-right">
+                <LeftBar />
+                <div style={{ flex: 6 }}>
+                  <Outlet />
+                </div>
+                <RightBar />
+              </div>
+            </div>
+          </ProtectedRoute>
+        </AuthProvider>
+      </UserContextProvider>
     );
   }
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <ProtectedRoute>
-          <DarkModeContextProvider>
-            <Layout />
-          </DarkModeContextProvider>
-        </ProtectedRoute>
+        <DarkModeContextProvider>
+          {" "}
+          <Layout />{" "}
+        </DarkModeContextProvider>
       ),
       children: [
         { path: "/", element: <Home /> },
@@ -62,21 +56,25 @@ function App() {
     {
       path: "/signin",
       element: (
-        <ProtectedRoute2>
+        <UserContextProvider>
           <AuthProvider>
-            <SignIn />
+            <ProtectedRoute isProtectionRequired={false}>
+              <SignIn />
+            </ProtectedRoute>
           </AuthProvider>
-        </ProtectedRoute2>
+        </UserContextProvider>
       ),
     },
     {
       path: "/signup",
       element: (
-        <ProtectedRoute2>
-          <AuthProvider>
-            <SignUp />
-          </AuthProvider>
-        </ProtectedRoute2>
+        <AuthProvider>
+          <UserContextProvider>
+            <ProtectedRoute isProtectionRequired={false}>
+              <SignUp />
+            </ProtectedRoute>
+          </UserContextProvider>
+        </AuthProvider>
       ),
     },
   ]);

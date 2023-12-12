@@ -1,15 +1,19 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import request_API from "../api/customFetchAPI";
+import { useUserContextValue } from "./userContext";
+
 //create context
 const context = createContext();
 
 // custom Provider component create
 export default function AuthProvider({ children }) {
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
   const [signIn, setSignIn] = useState(false);
   const [register, setRegister] = useState(false);
   const navigate = useNavigate();
+  const { setUser, setIsAuthenticated } = useUserContextValue();
+
   useEffect(() => {
     if (signIn) {
       const findUser = async () => {
@@ -19,6 +23,8 @@ export default function AuthProvider({ children }) {
           setError(data.error);
           return;
         }
+        setUser(data?.data);
+        setIsAuthenticated(true);
         setTimeout(() => {
           navigate("/");
         }, 2000);
@@ -43,6 +49,6 @@ export default function AuthProvider({ children }) {
 }
 
 //get context
-export const useContextValue = () => {
+export const useAuthContextValue = () => {
   return useContext(context);
 };

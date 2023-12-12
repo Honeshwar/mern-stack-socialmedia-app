@@ -85,27 +85,28 @@ code {
   }
   // for profile
   .profile {
-    .details { 
+    .details {
       background-color: #2b2a2a;
       color: white;
       box-shadow: 0 0 5px 1px rgb(43, 42, 42);
       img {
         box-shadow: 0 0 5px 1px rgb(43, 42, 42);
       }
-      .left, .center .links a{
+      .left,
+      .center .links a {
         color: white;
       }
     }
-    .userPosts{
+    .userPosts {
       .post {
-      background-color: #2b2a2a;
-      color: white;
-      box-shadow: 0 0 5px 1px rgb(43, 42, 42);
-      p,
-      .bottom .interaction-btn {
-        color: whitesmoke;
+        background-color: #2b2a2a;
+        color: white;
+        box-shadow: 0 0 5px 1px rgb(43, 42, 42);
+        p,
+        .bottom .interaction-btn {
+          color: whitesmoke;
+        }
       }
-    }
     }
   }
 }
@@ -134,4 +135,9 @@ code {
   @media screen and (max-width: 960px) {
     @content;
   }
+}
+
+a {
+  color: unset;
+  text-decoration-line: none;
 }

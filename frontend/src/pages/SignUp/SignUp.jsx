@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useContextValue } from "../../context/authContext";
+import { useAuthContextValue } from "../../context/authContext";
 
 import "./SignUp.scss";
 
@@ -9,7 +9,7 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { error, setSignUp } = useContextValue();
+  const { error, setSignUp } = useAuthContextValue();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ export default function SignUp() {
     <div className="signUp">
       <div className="card">
         <div className="left">
-          {error && <p className="error">{error.message}</p>}
+          {error && <p className="error">{error}</p>}
           <h1>SignUp</h1>
           <form onSubmit={submitHandler} className="loginForm">
             <div className="inputItems">

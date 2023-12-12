@@ -16,11 +16,11 @@ async function customFetch(url, configObj) {
     const data = await fetch(url, configurations);
     const dataJson = await data.json();
     console.log(dataJson);
-    if (dataJson.error) throw new Error(dataJson.data.error);
+    if (dataJson?.error) throw new Error(dataJson?.error.message);
     return { success: true, data: dataJson };
   } catch (error) {
-    console.log("custom fetch", error);
-    return { success: false, error: error.message };
+    console.log("custom fetch error", error);
+    return { success: false, error: error + "" };
   }
 }
 //api func obj
