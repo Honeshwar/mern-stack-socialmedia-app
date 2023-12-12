@@ -73,6 +73,13 @@ code {
         box-shadow: 0 0 5px 1px rgb(43, 42, 42);
       }
     }
+    .share {
+      .top input,
+      .top input::placeholder,
+      .bottom span {
+        color: white !important;
+      }
+    }
     .post {
       background-color: #2b2a2a;
       color: white;

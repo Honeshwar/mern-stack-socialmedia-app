@@ -1,9 +1,9 @@
 import Post from "../Post/Post";
 import "./Posts.scss";
-import { useUserContextValue } from "../../context/userContext";
+import { useAuthContextValue } from "../../context/authContext";
 
 export default function Posts() {
-  const { user } = useUserContextValue();
+  const { user } = useAuthContextValue();
   const posts = [
     {
       //id,name , profile pic,desc,postimg

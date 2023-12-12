@@ -1,40 +1,47 @@
-import { useState, useEffect, createContext, useContext } from "react";
+// import { useState, useEffect, createContext, useContext } from "react";
+// import request_API from "../api/customFetchAPI";
 
-//create context
-const context = createContext();
+// //create context
+// const context = createContext();
 
-// custom Provider component create
-export default function UserContextProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null);
+// // custom Provider component create
+// export default function UserContextProvider({ children }) {
+//   const [createPost, setCreatePost] = useState(null);
+//   const [posts, setPosts] = useState(null);
+//   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const userInLocalStorage = JSON.parse(localStorage.getItem("user"));
-    if (userInLocalStorage) {
-      setUser(userInLocalStorage);
-      setIsAuthenticated(true);
-    }
-  }, []);
-  useEffect(() => {
-    console.log("isAuthenticated", isAuthenticated);
-    console.log("user", user);
-    if (isAuthenticated) {
-      localStorage.setItem("user", JSON.stringify(user));
-    } else if (user && !isAuthenticated) {
-      localStorage.removeItem("user");
-    }
-  }, [isAuthenticated, user]);
+//   useEffect(() => {
+//     if (createPost) {
+//       const addPost = async () => {
+//         const data = await request_API.posts.create({
+//           createPost,
+//         });
+//         if (data.success) setPosts(data);
+//         else setError(data.error);
+//       };
+//       addPost();
+//     }
+//   }, [createPost]);
+//   useEffect(() => {
+//     if (posts === null && user) {
+//       const getPost = async () => {
+//         const data = await request_API.posts.getTimeLine(user?._id);
+//         if (data.success) setPosts(data);
+//         else setError(data.error);
+//       };
+//       getPost();
+//     }
+//   }, [posts]);
+//   return (
+//     <context.Provider
+//       value={{ isAuthenticated, user, setUser, setIsAuthenticated }}
+//     >
+//       {children}
+//     </context.Provider>
+//   );
+// }
 
-  return (
-    <context.Provider
-      value={{ isAuthenticated, user, setUser, setIsAuthenticated }}
-    >
-      {children}
-    </context.Provider>
-  );
-}
-
-//get context
-export const useUserContextValue = () => {
-  return useContext(context);
-};
+// //get context
+// export const useUserContextValue = () => {
+//   return useContext(context);
+// };

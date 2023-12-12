@@ -1,8 +1,8 @@
 import "./RightBar.scss";
-import { useUserContextValue } from "../../context/userContext";
+import { useAuthContextValue } from "../../context/authContext";
 
 export default function RightBar() {
-  const { user } = useUserContextValue();
+  const { user } = useAuthContextValue();
 
   return (
     <aside className="rightBar">
@@ -47,7 +47,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                {user.username}
+                {user?.username}
                 <span> changed their cover picture</span>
               </h6>
             </div>
@@ -62,7 +62,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                {user.username} <span> like a post</span>
+                {user?.username} <span> like a post</span>
               </h6>
             </div>
             <div className="right">
@@ -76,7 +76,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                {user.username} <span> do comment</span>
+                {user?.username} <span> do comment</span>
               </h6>
             </div>
             <div className="right">
@@ -90,7 +90,7 @@ export default function RightBar() {
                 alt="profile pic"
               />
               <h6>
-                {user.username} <span> post</span>
+                {user?.username} <span> post</span>
               </h6>
             </div>
             <div className="right">

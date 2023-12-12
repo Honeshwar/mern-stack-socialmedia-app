@@ -5,11 +5,11 @@ import { BsMoon, BsSun, BsSearch } from "react-icons/bs";
 import { BiCategory } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { useDarkModeContextValue } from "../../context/darkModeContext";
-import { useUserContextValue } from "../../context/userContext";
+import { useAuthContextValue } from "../../context/authContext";
 
 export default function Navbar() {
   const { isDarkMode, toogleIsDarkMode } = useDarkModeContextValue(); //contextValue
-  const { user } = useUserContextValue();
+  const { user } = useAuthContextValue();
 
   return (
     <div className="navbar">
@@ -41,7 +41,7 @@ export default function Navbar() {
             src=" https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
             alt="Profile"
           />
-          <span>{user.username}</span>
+          <span>{user?.username}</span>
         </Link>
       </div>
     </div>

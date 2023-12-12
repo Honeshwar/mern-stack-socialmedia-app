@@ -4,11 +4,11 @@ import { BsThreeDots, BsFillShareFill } from "react-icons/bs";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import Comments from "../Comments/Comments.jsx";
-import { useUserContextValue } from "../../context/userContext";
+import { useAuthContextValue } from "../../context/authContext";
 
 export default function Post({ post }) {
   const [showComments, setShowComments] = useState(false);
-  const { user } = useUserContextValue();
+  const { user } = useAuthContextValue();
   const comments = [
     {
       id: 1,

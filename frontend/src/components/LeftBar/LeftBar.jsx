@@ -1,10 +1,10 @@
 import "./LeftBar.scss";
 import { Link } from "react-router-dom";
 import { GiThreeFriends } from "react-icons/gi";
-import { useUserContextValue } from "../../context/userContext";
+import { useAuthContextValue } from "../../context/authContext";
 
 export default function LeftBar() {
-  const { user } = useUserContextValue();
+  const { user } = useAuthContextValue();
 
   return (
     <aside className="leftBar">

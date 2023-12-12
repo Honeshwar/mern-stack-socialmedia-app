@@ -6,13 +6,13 @@ import { useAuthContextValue } from "../../context/authContext";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { error, setSignIn } = useAuthContextValue();
+  const { error, handleSignin } = useAuthContextValue();
   console.log("error signin", error);
+
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(email, password);
-    const user = { email, password };
-    setSignIn(user);
+    handleSignin({ email, password });
   };
   return (
     <div className="signIn">

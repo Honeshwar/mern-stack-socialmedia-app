@@ -9,12 +9,12 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const { error, setSignUp } = useAuthContextValue();
+  const { error, handleRegister } = useAuthContextValue();
 
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(username, email, password, confirmPassword);
-    setSignUp({ username, email, password });
+    handleRegister({ username, email, password });
   };
   return (
     <div className="signUp">
