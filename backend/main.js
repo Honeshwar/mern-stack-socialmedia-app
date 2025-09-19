@@ -6,13 +6,24 @@ const configEnv = require("dotenv").config();
 const helmet = require("helmet");
 // HTTP request logger middleware for node.js
 const morgan = require("morgan");
-const mongodb = require("./config/mongoose");
+const connectToMongoDB = require("./config/mongoose");
 // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 const cors = require("cors"); // CORS (Cross-Origin Resource Sharing):Since your frontend and backend are on different ports, you might encounter CORS issues. To solve this during development, you can use the cors middleware in your Express backend:
 const app = express();
 const port = process.env?.PORT;
 
 //add db
+let isConnected = false; //track connection
+//middleware to check and connect db before each req
+app.use(async (req, res, next) => {
+  if (!isConnected) {
+    await connectToMongoDB();
+    isConnected = true;
+  }
+  next();
+});
+
+//cors
 app.use(
   cors({
     origin: "http://localhost:3000", //frontend url, for local test
@@ -29,7 +40,12 @@ app.use("/", (req, res) => {
   console.log("hi", req.body);
 });
 app.use("/", require("./routers"));
-app.listen(port, (error) => {
-  if (error) console.log(error);
-  console.log("Server running on port 8000");
-});
+
+
+// app.listen(port, (error) => {
+//   if (error) console.log(error);
+//   console.log("Server running on port 8000");
+// });
+
+// vercel server less so no need to listen
+module.exports = app;
