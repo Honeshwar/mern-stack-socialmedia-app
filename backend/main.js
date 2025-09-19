@@ -25,9 +25,9 @@ app.use(
 app.use(express.json()); //to parse req, only application/json content-type work, else use urlencoded()
 app.use(helmet());
 app.use(morgan("common"));
-// app.use("/", (req, res) => {
-//   console.log("hi", req.body);
-// });
+app.use("/", (req, res) => {
+  console.log("hi", req.body);
+});
 app.use("/", require("./routers"));
 app.listen(port, (error) => {
   if (error) console.log(error);
