@@ -1,6 +1,6 @@
-const AUTH_API_URL = "https://6lftc9-8000.csb.app/api/auth/";
-const USERS_API_URL = "https://6lftc9-8000.csb.app/api/users/";
-const POSTS_API_URL = "https://6lftc9-8000.csb.app/api/posts/";
+const AUTH_API_URL = "http://localhost:8000/api/auth/";
+const USERS_API_URL = "http://localhost:8000/api/users/";
+const POSTS_API_URL = "http://localhost:8000/api/posts/";
 
 const GENERATE_API_URL = {
   //auth

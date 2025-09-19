@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <AuthProvider>
-        <ProtectedRoute isProtectionRequired={false}>
+        <ProtectedRoute isProtectionRequired={true}>
           {/* // protect app */}
           <App />
         </ProtectedRoute>
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}></RouterProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 //test karanga

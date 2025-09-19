@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 // const configEnv = require("dotenv").config(); already use main.js
 const db = mongoose
   .connect(
-    `mongodb+srv://Honeshwar:${process.env.MONGODB_PASSWORD}@cluster0.o5zojlu.mongodb.net/?retryWrites=true&w=majority`,
+    `mongodb+srv://Honeshwar:${process.env.MONGODB_PASSWORD}@cluster0.o5zojlu.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(
     () => {
@@ -10,7 +10,7 @@ const db = mongoose
     },
     (E) => {
       console.error("Error: Database is not connecting \n", E);
-    },
+    }
   );
 //mongodb://dn
 module.exports = db;

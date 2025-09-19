@@ -15,8 +15,10 @@ const port = process.env?.PORT;
 //add db
 app.use(
   cors({
-    origin: "https://6lftc9-3000.csb.app",
-  }),
+    origin: "http://localhost:3000", //frontend url, for local test
+    // methods: ["GET", "POST", "PUT", "DELETE"],
+    // credentials: true, //access-control-allow-credentials:true
+  })
 );
 // app.use(express.urlencoded());//only work for url, x-www-form-urlencoded
 
